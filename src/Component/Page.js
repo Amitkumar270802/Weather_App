@@ -41,7 +41,7 @@ const Page = () => {
   async function call_Api() {
     try {
       const res = await fetch(
-        `http://api.weatherapi.com/v1/forecast.json?key=${MY_KEY}&q=${location}&days=1&aqi=no&alerts=no`
+        `https://api.weatherapi.com/v1/forecast.json?key=${MY_KEY}&q=${location}&days=1&aqi=no&alerts=no`
       );
       const json = await res.json();
       console.log(json);
