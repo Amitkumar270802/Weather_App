@@ -24,7 +24,7 @@ const Page = () => {
   const [loc, setLoc] = useState({
     name: "",
     country: "",
-    tz_id: "",
+    region: "",
   });
 
   const change_handler = (e) => {
@@ -61,21 +61,18 @@ const Page = () => {
         setLoc({
           name: json.location.name,
           country: json.location.country,
-          tz_id: json.location.tz_id,
+         region: json.location.region,
         });
 
         if (loc.name || loc.country ) {
           toast.success("Location Found");
-        } else {
-          if (location==="") {
-            toast.error("No matching location found.");
-          }
-        }
+        } 
       }
       // console.log(items);
-    } catch (error) {
-      toast.error(error.message);
-      console.log("No matching location found ");
+    }  catch (error) {
+      if (location === "") {
+        toast.error("Enter the Location.");
+      } else toast.error("location Not found");
     }
   }
   return (
@@ -88,7 +85,7 @@ const Page = () => {
             <input
               className="text-white capitalize bg-transparent w-full h-10 rounded-lg text-center font-semibold border border-gray-500"
               type="search "
-              placeholder="search"
+              placeholder="City_Name/ City_Name Country_Name"
               name="location"
               value={location}
               onChange={change_handler}
@@ -114,10 +111,9 @@ const Page = () => {
               <div className="flex flex-col gap-y-4">
                 <div className="text-md">{current.date}</div>
                 <div className="text-3xl sm:text-4xl  ">{current.condition}</div>
-                <p className="capitalize text-xl text-white ">
-                  {loc.name} , {loc.tz_id}
+               <p className="capitalize text-xl text-white ">
+                  {loc.name}, {loc.region} , {loc.country}
                 </p>
-                {/* <div className="text-6xl">Partly Cloudy</div> */}
               </div>
             </div>
           </section>
@@ -132,7 +128,7 @@ const Page = () => {
                   <p>Temperature</p>
                 </div>
                 <p className="text-4xl font-semibold">
-                  {current.temp} <span className="text-sm">C</span>
+                   {current.temp}&deg; <span className="text-sm">C</span>
                 </p>
               </div>
               <div className="bg-[#ffffff0f] rounded-md  flex flex-col  justify-center items-center m-2 gap-y-4 min-h-[100px] min-w-[140px]">
