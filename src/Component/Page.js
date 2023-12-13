@@ -85,7 +85,7 @@ const Page = () => {
             <input
               className="text-white capitalize bg-transparent w-full h-10 rounded-lg text-center font-semibold border border-gray-500"
               type="search "
-              placeholder="City_Name/ City_Name Country_Name"
+              placeholder="City_Name Country_Name"
               name="location"
               value={location}
               onChange={change_handler}
@@ -100,12 +100,12 @@ const Page = () => {
           </div>
 
           {/* section 1 */}
-          <section className=" flex rounded-md gap-x-3 mt-3 justify-evenly items-center p-4 text-white">
+            <section className=" flex rounded-md gap-x-3 mt-3 justify-evenly items-center p-4 text-white">
             <div className=" p-8 flex justify-around items-center ">
-              <div className="text-8xl ">
+              <div className="text-xl  ">
                 <img
                   src={current.img}
-                  className="min-h-[200px] min-w-[210px]"
+                  className="min-h-[200px] min-w-[180px]"
                 />
               </div>
               <div className="flex flex-col gap-y-4">
@@ -119,46 +119,46 @@ const Page = () => {
           </section>
 
           {/* section 2 */}
-          <section className="gap-x-3 mt-3  rounded-md p-2 flex flex-col text-white ">
+           <section className="gap-x-3 mt-3  rounded-md p-2 flex flex-col text-white ">
             <div className="backdrop-blur-sm backdrop-brightness-90  flex justify-center items-center"></div>
             <div className="p-4 flex flex-wrap justify-around items-center  ">
-              <div className="bg-[#ffffff0f] rounded-md  flex flex-col  justify-center items-center m-2 gap-y-4 min-h-[100px] min-w-[140px]">
-                <div className="flex gap-x-2">
+              <div className="bg-[#ffffff0f] rounded-md  flex flex-col  justify-center items-center m-2 gap-y-4 min-h-[100px] min-w-[140px]"> 
+                <div className="flex justify-around items-center  w-full">
                   <FaTemperatureHigh className="text-xl" />
                   <p>Temperature</p>
                 </div>
                 <p className="text-4xl font-semibold">
-                   {current.temp}&deg; <span className="text-sm">C</span>
+                  {current.temp}&deg; <span className="text-sm">C</span>
                 </p>
               </div>
-              <div className="bg-[#ffffff0f] rounded-md  flex flex-col  justify-center items-center m-2 gap-y-4 min-h-[100px] min-w-[140px]">
-                <div className="flex gap-x-2">
+              <div className="bg-[#ffffff0f] rounded-md  flex flex-col  justify-center items-center m-2 gap-y-4 min-h-[100px] min-w-[140px]"> 
+                <div className="flex justify-around items-center  w-full">
                   <FaWind className="text-xl" />
-                  <p>Wind </p>
+                  <p>Wind Speed</p>
                 </div>
                 <p className="text-4xl font-semibold">
                   {current.wind} <span className="text-sm">Kph</span>
                 </p>
               </div>
 
-              <div className="bg-[#ffffff0f] rounded-md  flex flex-col  justify-center items-center m-2 gap-y-4 min-h-[100px] min-w-[140px]">
-                <div className="flex gap-x-2">
+              <div className="bg-[#ffffff0f] rounded-md  flex flex-col  justify-center items-center m-2 gap-y-4 min-h-[100px] min-w-[140px]"> 
+                <div className="flex justify-around items-center  w-full">
                   <GiFlowerTwirl className="text-xl" />
-                  <p>Wind direction </p>
+                  <p>Wind Direction</p>
                 </div>
                 <p className="text-4xl font-semibold">
                   {current.windDirection}
                 </p>
               </div>
-              <div className="bg-[#ffffff0f] rounded-md  flex flex-col  justify-center items-center m-2 gap-y-4 min-h-[100px] min-w-[140px]">
-                <div className="flex gap-x-2">
+              <div className="bg-[#ffffff0f] rounded-md  flex flex-col  justify-center items-center m-2 gap-y-4 min-h-[100px] min-w-[140px]"> 
+                <div className="flex justify-around items-center  w-full">
                   <WiHumidity className="text-xl" />
                   <p>Humidity </p>
                 </div>
                 <p className="text-4xl font-semibold">{current.humidity}</p>
               </div>
-              <div className="bg-[#ffffff0f] rounded-md  flex flex-col  justify-center items-center m-2 gap-y-4 min-h-[100px] min-w-[140px]">
-                <div className="flex gap-x-2">
+              <div className="bg-[#ffffff0f] rounded-md  flex flex-col  justify-center items-center m-2 gap-y-4 min-h-[100px] min-w-[140px]"> 
+                <div className="flex justify-around items-center  w-full">
                   <TbBrandSpeedtest className="text-xl" />
                   <p>Pressure </p>
                 </div>
